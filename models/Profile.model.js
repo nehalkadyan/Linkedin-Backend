@@ -18,8 +18,8 @@ const profileSchema = new mongoose.Schema({
 
     experiences : [{
         companyName : String,
-        joiningDate : Date,
-        lastDate : Date,
+        joiningDate : String, 
+        lastDate : String,
         description : String
     }],
     
@@ -37,8 +37,7 @@ const profileSchema = new mongoose.Schema({
 
     education : [{
         schoolName : String,
-        passedOutYear: Date,
-        joiningDate : Date
+        session: String,
     }]
 },
 // timestamps -> will tell the time user was stored and 

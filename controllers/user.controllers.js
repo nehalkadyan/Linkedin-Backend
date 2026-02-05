@@ -123,6 +123,10 @@ const signin = async(req, res) => {
 
     res.cookie("access_token", token, {httpOnly : true})
 
+    const loginTime = new Date() // current time and current date
+
+    user.lastLogin = loginTime;
+
     // abcdefghijklmnopnehal + id
     // $67w35476476eyurfgeyehfiuehry78ey6r783eyruihu8ryueyr3478ryuieyr
 

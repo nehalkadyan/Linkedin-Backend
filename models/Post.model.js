@@ -16,7 +16,6 @@ const postSchema = new mongoose.Schema({
     likes : [{
         type : mongoose.Schema.Types.ObjectId,
         ref : "User",
-        required : true
     }],
     
     numberOfComments : {
@@ -33,3 +32,20 @@ const postSchema = new mongoose.Schema({
 const Post = mongoose.model("Post", postSchema);
 
 module.exports = Post;
+
+/*
+ content : "FSD",
+ author : 3t4673534656374,
+ likes : [{
+  _id : 7e73674632743784
+ }, {
+  _id : 837463728578324673
+ },
+ 
+ {
+ _id: 87r732865782364578
+ }]
+
+ addLike : 
+
+*/

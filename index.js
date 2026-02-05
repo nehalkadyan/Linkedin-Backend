@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const cookieParser = require("cookie-parser")
 const userRoutes = require("./routes/user.routes")
+const postRoutes = require("./routes/post.routes")
 const app = express();
 
 // application-level middleware
@@ -30,6 +31,7 @@ mongoose.connect(process.env.MONGO_URI)
 // api
 
 app.use("/api", userRoutes)
+app.use("/api", postRoutes)
 
 app.get("/", (req, res) => {
     return res.send("<h1>Linkedin Backend Project!</h1>")

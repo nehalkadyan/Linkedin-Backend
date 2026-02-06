@@ -14,15 +14,13 @@ const app = express();
 // application-level middleware
 // parse the req.body back to json
 // middleware
-app.use(cookieParser())
-
-app.use(express.json())
-
 app.use(cors({
-    origin : "https://linkedin-frontend-theta.vercel.app/signin",
-    methods : ["GET", "POST", "PUT", "DELETE"],
-    credentials : true
-}))
+    origin: "https://linkedin-frontend-theta.vercel.app",
+    credentials: true
+}));
+
+app.use(express.json());
+app.use(cookieParser());
 // mongodb -> connection string
 
 mongoose.connect(process.env.MONGO_URI)

@@ -6,7 +6,7 @@ const Profile = require("../models/Profile.model");
 const createProfile = async(req, res) => {
     try{
        // req.body
-       const {headline, userId, summary, experience, skills, education} = req.body;
+       const {headline, userId, summary, experience, skills = [], education} = req.body;
 
        // create profile
 

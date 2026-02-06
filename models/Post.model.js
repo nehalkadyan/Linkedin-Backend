@@ -13,10 +13,7 @@ const postSchema = new mongoose.Schema({
         required : true
     },
     // storing users that liked this post
-    likes : [{
-        type : mongoose.Schema.Types.ObjectId,
-        ref : "User",
-    }],
+    likes : [String],
     
     numberOfComments : {
         type: Number,

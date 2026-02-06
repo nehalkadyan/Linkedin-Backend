@@ -35,4 +35,29 @@ const getAllPosts = async(req, res) => {
   }
 }
 
-module.exports = {createPost, getAllPosts}
+// controller to like a post
+
+const likePost = async(req, res) => {
+  try{
+
+   const {postId, userId} = req.body;
+   // postId = 87y4732t6732t478t326
+  //  userIdObj = {
+  //   _id : 873264732874632874
+  //  }
+   const post = await Post.findById(postId);
+
+  post.likes = [...post.likes, ...userId];
+
+  await post.save();
+
+  //  post.likes.push(userId);
+
+   return res.status(200).json({message : "Post liked successfully!", post})
+
+  }catch(err){
+    console.log("err", err.message)
+  }
+}
+
+module.exports = {createPost, getAllPosts, likePost}

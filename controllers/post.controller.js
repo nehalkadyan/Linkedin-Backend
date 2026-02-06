@@ -28,7 +28,7 @@ const createPost = async(req, res) => {
 
 const getAllPosts = async(req, res) => {
   try{
-    const posts = await Post.find()
+    const posts = await Post.find().populate("author", "username email")
     return res.status(200).json({message : "Posts fetched successfully!",posts})
   }catch(err){
     console.log("err", err.message)

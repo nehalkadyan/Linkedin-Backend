@@ -38,6 +38,13 @@ const profileSchema = new mongoose.Schema({
     education : [{
         schoolName : String,
         session: String,
+    }],
+
+    // connection
+
+    connections : [{
+        type : mongoose.Schema.Types.ObjectId,
+        ref : "User"
     }]
 },
 // timestamps -> will tell the time user was stored and 

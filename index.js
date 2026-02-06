@@ -19,6 +19,7 @@ app.use(cookieParser())
 app.use(express.json())
 
 app.use(cors({
+    origin : "https://linkedin-frontend-theta.vercel.app/",
     credentials : true
 }))
 // mongodb -> connection string

@@ -24,4 +24,15 @@ const createPost = async(req, res) => {
     }
 }
 
-module.exports = {createPost}
+// controller to get all posts
+
+const getAllPosts = async(req, res) => {
+  try{
+    const posts = await Post.find()
+    return res.status(200).json({message : "Posts fetched successfully!",posts})
+  }catch(err){
+    console.log("err", err.message)
+  }
+}
+
+module.exports = {createPost, getAllPosts}
